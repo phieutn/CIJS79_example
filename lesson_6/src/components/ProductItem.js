@@ -1,18 +1,12 @@
-const ProductItem = (props) => {
-  const { product, handleAddItem } = props;
+const ProductItem = ({ product, handleAddItem }) => {
   return (
-    <div className="col">
+    <div class="col">
       <div className="card" style={{ width: "18rem" }}>
-        <img src={product.imgUrl} className="card-img-top pt-2" />
+        <img src={product.imgUrl} className="card-img-top" alt="..." />
         <div className="card-body">
           <h4>{product.name}</h4>
           <div>{product.price}</div>
-          <button
-            className="btn btn-primary mt-2 w-100"
-            onClick={() => handleAddItem(product)}
-          >
-            Add item
-          </button>
+          <button className="btn btn-primary w-100" onClick={ () => handleAddItem(product)}>Add Item</button>
         </div>
       </div>
     </div>

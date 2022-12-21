@@ -2,10 +2,7 @@ import { useState } from "react";
 import "./App.css";
 
 const App2 = () => {
-  const [user, setUser] = useState({
-    name: "",
-    address: "",
-  });
+  const [user, setUser] = useState({});
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -14,16 +11,22 @@ const App2 = () => {
   const handleInputChange = (event) => {
     const value = event.target.value;
     const key = event.target.name;
+    
     console.log(`key: ${key} value: ${value}`);
-    setUser({
+    
+    setUser(
+      {
       ...user,
       [key]: value,
-    });
+    }
+    );
+
   };
 
   return (
     <div className="container">
       <form onSubmit={handleSubmit}>
+
         <div className="form-group mb-3">
           <label>Name</label>
           <input
@@ -34,6 +37,7 @@ const App2 = () => {
             onChange={handleInputChange}
           />
         </div>
+
         <div className="form-group">
           <label>Address</label>
           <input
