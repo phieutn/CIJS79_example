@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bai 4</title>
+  </head>
+  <script>
+    // let input = "A";
+    let input = "096";
+
+    let users = [
+      {
+        name: "Abc",
+        phoneNumber: "098123",
+      },
+      {
+        name: "Alice",
+        phoneNumber: "0965676196",
+      },
+      {
+        name: "Bob",
+        phoneNumber: "096123",
+      },
+      {
+        name: "Albert",
+        phoneNumber: "096123",
+      },
+    ];
+    
+    // Danh bạ được sắp xếp bằng tên theo bảng chữ cái
+    // Tham khao them: https://topdev.vn/blog/cac-thuat-toan-sap-xep-pho-bien-va-javascript/
+    // https://stackoverflow.com/questions/57763205/what-is-array-prototype-sort-time-complexity
+    // https://www.section.io/engineering-education/sorting-algorithms-in-js/
+
+    // function compare(a, b) {
+    //   if (a.name < b.name) {
+    //     return -1;
+    //   }
+    //   if (a.name > b.name) {
+    //     return 1;
+    //   }
+    //   return 0;
+    // }
+
+    // users.sort(compare);
+    // console.log("Result: ", users);
+
+    // Thêm mới danh bạ với tên và số điện thoại
+    // let newUser = {
+    //   name: "MindX",
+    //   phoneNumber: "012345",
+    // };
+    // users.push(newUser);
+
+    // Tìm kiếm danh bạ theo tên và số điện thoại
+    //   let result = users.filter( (user) => {
+    //        return user.name.includes(input) || user.phoneNumber.includes(input)
+    //   } );
+    //   console.log("Input: ", input)
+    //   console.log("Result: ", result);
+
+    // Xoá các danh bạ bị trùng số điện thoại (ở trong ví dụ là Alice và Daniel). Sẽ xoá người nào đứng sau (Daniel sẽ bị xoá)
+    // const result = users.reduce((rs, user) => {
+    //   for (let i = 0; i < rs.length; i++) {
+    //     if (rs[i].phoneNumber === user.phoneNumber) {
+    //       return rs;
+    //     }
+    //   }
+    //   rs.push(user);
+    //   return rs;
+    // }, []);
+    // console.log("Result: ", result);
+  </script>
+  <body></body>
+</html>
