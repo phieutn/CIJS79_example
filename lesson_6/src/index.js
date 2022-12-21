@@ -4,13 +4,12 @@ import './index.css';
 import App from './App';
 import App2 from './App2';
 import App3 from './App3';
+import Homepage from './pages/Homepage';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App3 />
-  </React.StrictMode>
+    <Homepage />
 );
 
 // If you want to start measuring performance in your app, pass a function
