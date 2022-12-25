@@ -34,44 +34,44 @@
     // https://stackoverflow.com/questions/57763205/what-is-array-prototype-sort-time-complexity
     // https://www.section.io/engineering-education/sorting-algorithms-in-js/
 
-    // function compare(a, b) {
-    //   if (a.name < b.name) {
-    //     return -1;
-    //   }
-    //   if (a.name > b.name) {
-    //     return 1;
-    //   }
-    //   return 0;
-    // }
+    function compare(a, b) {
+      if (a.name < b.name) {
+        return -1;
+      }
+      if (a.name > b.name) {
+        return 1;
+      }
+      return 0;
+    }
 
-    // users.sort(compare);
-    // console.log("Result: ", users);
+    users.sort(compare);
+    console.log("Result: ", users);
 
     // Thêm mới danh bạ với tên và số điện thoại
-    // let newUser = {
-    //   name: "MindX",
-    //   phoneNumber: "012345",
-    // };
-    // users.push(newUser);
+    let newUser = {
+      name: "MindX",
+      phoneNumber: "012345",
+    };
+    users.push(newUser);
 
     // Tìm kiếm danh bạ theo tên và số điện thoại
-    //   let result = users.filter( (user) => {
-    //        return user.name.includes(input) || user.phoneNumber.includes(input)
-    //   } );
-    //   console.log("Input: ", input)
-    //   console.log("Result: ", result);
+      // let result = users.filter( (user) => {
+      //      return user.name.includes(input) || user.phoneNumber.includes(input)
+      // } );
+      // console.log("Input: ", input)
+      // console.log("Result: ", result);
 
     // Xoá các danh bạ bị trùng số điện thoại (ở trong ví dụ là Alice và Daniel). Sẽ xoá người nào đứng sau (Daniel sẽ bị xoá)
-    // const result = users.reduce((rs, user) => {
-    //   for (let i = 0; i < rs.length; i++) {
-    //     if (rs[i].phoneNumber === user.phoneNumber) {
-    //       return rs;
-    //     }
-    //   }
-    //   rs.push(user);
-    //   return rs;
-    // }, []);
-    // console.log("Result: ", result);
+    const result = users.reduce((rs, user) => {
+      for (let i = 0; i < rs.length; i++) {
+        if (rs[i].phoneNumber === user.phoneNumber) {
+          return rs;
+        }
+      }
+      rs.push(user);
+      return rs;
+    }, []);
+    console.log("Result: ", result);
   </script>
   <body></body>
 </html>
