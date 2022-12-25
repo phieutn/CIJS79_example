@@ -1,8 +1,6 @@
 const Header = (props) => {
-
-  // console.log("props: ",props);
-  const {cartItems} = props;
-  console.log("After update:", cartItems)
+  const { cartItems } = props;
+  let username = localStorage.getItem("username");
 
   return (
     <nav className="navbar bg-light">
@@ -14,9 +12,15 @@ const Header = (props) => {
             width={55}
           />
         </a>
-        <button type="button" className="btn btn-success">
-          Cart <span className="badge text-bg-secondary">{cartItems.length}</span>
-        </button>
+
+        <div>
+          <button type="button" className="btn btn-success">
+            Cart{" "}
+            <span className="badge text-bg-secondary">{cartItems.length}</span>
+          </button>
+          { username === null &&  (<button className="btn btn-success ms-2">Login</button>)}
+          { username !== null &&  (<button className="btn btn-success ms-2">Hello {username}</button>)}
+        </div>
       </div>
     </nav>
   );

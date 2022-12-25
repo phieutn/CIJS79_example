@@ -3,16 +3,17 @@ import Header from "../components/Header";
 import ProductList from "../components/ProductList";
 import CartList from "../components/CartList";
 import products from "./../data/products";
-
+import Pagination from "../components/Pagination";
 const Homepage = () => {
   // Header
   // ProductList
   // Cart
 
   const [cartItems, setCartItems] = useState([]);
+  const [searchValue, setSearchValue] = useState("");
 
   const handleAddItem = (p) => {
-    setCartItems( (prev) => {
+    setCartItems((prev) => {
       console.log("old value: cartItems ", cartItems);
       let exist = prev.find((item) => item.id === p.id);
 
@@ -26,9 +27,30 @@ const Homepage = () => {
   };
   return (
     <>
-      <Header cartItems={cartItems} time={1}/>
-      <ProductList products={products} handleAddItem={handleAddItem}/>
-      <CartList />
+      <Header cartItems={cartItems} time={1} />
+      {/* Searchbox */}
+      <div className="container mt-4">
+        <div className="mb-3 w-50">
+          <input
+            type="email"
+            className="form-control"
+            placeholder="Search text..."
+            value={searchValue}
+            onChange={(event) => {
+              setSearchValue(event.target.value);
+            }}
+          />
+        </div>
+      </div>
+
+      <ProductList
+        products={products}
+        handleAddItem={handleAddItem}
+        searchValue={searchValue}
+      />
+
+      <Pagination/>
+      <CartList cartItems={cartItems}  />
     </>
   );
 

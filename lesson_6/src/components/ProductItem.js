@@ -1,6 +1,6 @@
 const ProductItem = ({ product, handleAddItem }) => {
   return (
-    <div class="col">
+    <div className="col">
       <div className="card" style={{ width: "18rem" }}>
         <img src={product.imgUrl} className="card-img-top" alt="..." />
         <div className="card-body">
